@@ -12,6 +12,11 @@ typedef struct Variables {
 	int maxSize;
 }Variables;
 
+void freeVariables(Variables *vars) {
+	free(vars->arr);
+	free(vars);
+}
+
 //Initializes a variables list
 Variables InitVariables(int maxSize) {
 	Variables variables;

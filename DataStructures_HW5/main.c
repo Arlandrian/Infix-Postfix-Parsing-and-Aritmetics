@@ -205,7 +205,7 @@ char *InfixToPostfix(char* str) {
 	//postfix[j++] = ';';
 	postfix[j++] = '\0';
 
-	free(stack);
+	freeStack(stack);
 	return postfix;
 }
 
@@ -280,7 +280,7 @@ int CalculatePostfix(char *str,Variables *vars,int variablePos) {
 	}
 	int result = Pop(stack);
 	vars->arr[variablePos].value = result;
-	free(stack);
+	freeStack(stack);
 	return result;
 
 }
@@ -396,5 +396,6 @@ int main() {
 		}
 
 	} while (!exit);
+	return 0;
 	
 }

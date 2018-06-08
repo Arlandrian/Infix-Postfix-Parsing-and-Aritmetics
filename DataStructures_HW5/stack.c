@@ -147,7 +147,10 @@ char* stackToString(Stack *stack,char isChar) {
 
 }
 
-
+void freeStack(Stack *stack) {
+	free(stack->values);
+	free(stack);
+}
 
 
 void Pause() {
